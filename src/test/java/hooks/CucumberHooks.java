@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class CucumberHooks {
     public WebDriver driver;
@@ -22,17 +21,12 @@ public class CucumberHooks {
 
     @Before
     public void openBrowser(){
-        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.navigate().to("https://www.ralali.com");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
+        WebDriverManager.chromedriver().setup();
 
+        driver = new ChromeDriver(options);
+        driver.get("https://www.ralali.com/");
         context.driver = driver;
         context.driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }

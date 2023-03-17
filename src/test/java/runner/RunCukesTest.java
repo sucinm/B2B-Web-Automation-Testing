@@ -6,9 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = {"@Login"}, //identitas cucumber class
         features = {"classpath:features/"}, // package class cucumber
-        glue = { "classpath:step_definitions"}, // running final method
+        glue = { "step_definitions","hooks"}, // running final method
         plugin= {"pretty", "html:target/site/cucumber-pretty", "json:target/cucumber/cucumber.json"}
 )
 

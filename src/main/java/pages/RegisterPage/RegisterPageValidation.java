@@ -2,7 +2,6 @@ package pages.RegisterPage;
 
 import context.TestContext;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pages.LoginPage.LoginPage;
 
 public class RegisterPageValidation extends RegisterPage {
     public RegisterPageValidation(TestContext testContext) {
