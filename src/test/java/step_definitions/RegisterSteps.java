@@ -5,9 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import hooks.CucumberHooks;
 import org.junit.Assert;
-import pages.HomePage.HomePage;
 import pages.HomePage.HomePageAction;
 import pages.LoginPage.LoginPageAction;
 import pages.LoginPage.LoginPageValidation;
@@ -31,8 +29,8 @@ public class RegisterSteps {
     }
     @Given("User already in register page")
     public void userAlreadyInRegisterPage() {
-        homePageAction.clickButtonKunjungiMarketplace();
-        homePageAction.clickButtonMasukAtauDaftar();
+        homePageAction.clickButtonVisitMarketplace();
+        homePageAction.clickButtonSignInOrSignUp();
         loginPageAction.clickLinkRedirectToRegisterPage();
         registerPageValidation.isOnPage();
     }
@@ -51,11 +49,6 @@ public class RegisterSteps {
     public void userClickRegister() {
         registerPageAction.clickButtonRegister();
     }
-
-//    @Then("User will redirect to Login Page")
-//    public void userWillRedirectToLoginPage() {
-//        Assert.assertTrue(loginPageValidation.isOnPage());
-//    }
 
     @Then("Modal verification email is appear")
     public void modalVerificationEmailIsAppear() {

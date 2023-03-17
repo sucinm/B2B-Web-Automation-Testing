@@ -1,12 +1,10 @@
 package step_definitions;
 
 import context.TestContext;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import hooks.CucumberHooks;
 import org.junit.Assert;
 import pages.HomePage.HomePageAction;
 import pages.LoginPage.LoginPageAction;
@@ -32,15 +30,15 @@ public class LoginSteps {
 
     @Given("User already in login page")
     public void userAlreadyInLoginPage() {
-        homePageAction.clickButtonKunjungiMarketplace();
-        homePageAction.clickButtonMasukAtauDaftar();
+        homePageAction.clickButtonVisitMarketplace();
+        homePageAction.clickButtonSignInOrSignUp();
         loginPageValidation.isOnPage();
     }
 
-    @When("User input \"(.*)\" as email and input \"(.*)\" as password")
-    public void userInputAsEmailAndInputAsPassword(String userName, String password) {
-        loginPageAction.setInputUserName(userName);
-        loginPageAction.setInputPassword(password);
+    @When("User input valid email and as password")
+    public void userInputAsEmailAndInputAsPassword() {
+        loginPageAction.setInputUserName("adjustmanual123@gmail.com");
+        loginPageAction.setInputPassword("adjustmanual123");
     }
 
     @And("User clicked login button")

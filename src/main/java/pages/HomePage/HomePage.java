@@ -8,10 +8,10 @@ import pages.BasePage;
 
 public class HomePage extends BasePage {
     @FindBy(xpath = "//button[@class='Button__StyledButton-sc-1l9x0nw-0 bkqqJb']")
-    WebElement buttonKunjungiMarketplace;
+    WebElement buttonVisitMarketplace;
 
     @FindBy(xpath = "//button[@class='Button__StyledButton-sc-1l9x0nw-0 kCAJGO']")
-    WebElement buttonMasukAtauDaftar;
+    WebElement buttonSignInOrSignUp;
 
     public HomePage(TestContext context){
         super(context);
