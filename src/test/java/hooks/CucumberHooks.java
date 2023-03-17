@@ -22,7 +22,8 @@ public class CucumberHooks {
     @Before
     public void openBrowser(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--remote-allow-origins=*", "--no-sandbox", "--disable-dev-shm-usage", "--incognito", "--start-maximized", "window-size=1920,1080");
+        options.setHeadless(true);
         WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver(options);
