@@ -12,4 +12,4 @@ What things you need to install:
 - Google Chrome
 
 ## Result
-Result of automation testing [here](https://sucinm.github.io/B2B-Web-Automation-Testing/report/cucumber-html-reports/overview-features.html).
+Result of automation testing [here](https://sucinm.github.io/B2B-Web-Automation-Testing/report/cucumber-html-reports/feature-overview.html).
